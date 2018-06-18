@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Comande {{pagina}}
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+ 
+
+  <ion-content>
+    <ion-card *ngFor="let head of dati">
+        <h1>{{head.name}}</h1>
+        <ion-item *ngFor="let opzioni of head['items']">
+          <p>Clicca per aprire:</p>
+              <button ion-button clear>{{opzioni.content}}</button>
+          </ion-item>
+    </ion-card>
+  </ion-content>
+ 

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home Page</ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-card >
+
+    <ion-list *ngFor="let x of articles">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{x.urlToImage}}" alt="Errore">
+        </ion-thumbnail>
+        <p>{{x.source.name}}</p>
+        <h1></h1>
+        <button ion-button item-end color="light" (click)="openModal(this.x)"><ion-icon name="arrow-dropright"></ion-icon></button>
+      </ion-item>
+    </ion-list>
+    
+  </ion-card>
+</ion-content>
