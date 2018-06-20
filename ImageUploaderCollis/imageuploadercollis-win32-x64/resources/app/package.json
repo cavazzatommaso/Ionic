@@ -1,0 +1,16 @@
+{
+  "name": "imageuploadercollis",
+  "version": "0.1.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "archiver": "^2.1.1",
+    "cheerio": "^1.0.0-rc.2",
+    "cloudinary": "^1.11.0",
+    "electron": "^2.0.2",
+    "imgur": "^0.2.1",
+    "jQuery": "^1.7.4"
+  }
+}
