@@ -1,19 +1,29 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-        Comande {{pagina}}
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
- 
+  <ion-navbar>
+    <div id="cop"></div>
+    <ion-title>
+      Comande
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-  <ion-content>
-    <ion-card *ngFor="let head of dati">
-        <h1>{{head.name}}</h1>
-        <ion-item *ngFor="let opzioni of head['items']">
-          <p>Clicca per aprire:</p>
-              <button ion-button clear>{{opzioni.content}}</button>
-          </ion-item>
-    </ion-card>
-  </ion-content>
- 
+
+<ion-content>
+
+  <ion-card *ngFor="let head of dati" id="cont">
+    <ion-scroll scrollY="true" id="el">
+      <div id="linea"><h1 id="tit1">{{head.name}}</h1></div>
+      <div *ngFor="let opzioni of head['items']">
+          <hr id="linbtn" /> <button ion-button outline (click)="stampa()" id="buttn" class="btn">{{opzioni.content}}</button>
+      </div>
+    </ion-scroll>
+  </ion-card>
+
+
+  <ion-card id="prod">
+    <h1 id="tit2">Prodotti</h1>
+    <ion-list id="el1">
+  
+    </ion-list>
+  </ion-card>
+</ion-content>

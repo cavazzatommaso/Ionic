@@ -1,0 +1,11 @@
+{
+  "name": "imageuploadercollis",
+  "version": "1.0.0",
+  "description": "upload your folder into an hosting service",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cavazza Tommaso",
+  "license": "ISC"
+}

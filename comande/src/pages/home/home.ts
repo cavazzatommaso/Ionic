@@ -13,10 +13,4 @@ export class HomePage {
 
   }
 
-  openPage(params){
-    this.navCtrl.push(AboutPage, {
-      data: params
-    });
-  }
-
 }

@@ -1,7 +1,8 @@
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import * as $ from "jquery";
 
 @Component({
   selector: 'page-about',
@@ -10,11 +11,8 @@ import { NavController, NavParams } from 'ionic-angular';
 export class AboutPage {
 
   dati = [];
-  pagina;
 
-  constructor(public navCtrl: NavController,public http: Http,public navParams: NavParams) {
-    this.pagina = this.navParams.get("data");
-    console.log(this.navParams.get("data"));
+  constructor(public navCtrl: NavController,public http: Http) {
     
   }
 
@@ -22,6 +20,15 @@ export class AboutPage {
       this.http.get('./assets/elenco.json').map(res => res.json()).subscribe(data => {
             this.dati = data;
           });
+    
+    }
+
+    stampa()
+    {
+      console.log("click");
+      var s= $("#buttn").text();
+      $("#el1").append("<button ion-button outline>"+s+"</button>");
+      console.log(s);
     }
 
     
