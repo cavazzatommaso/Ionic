@@ -14,7 +14,8 @@
     <ion-scroll scrollY="true" id="el">
       <div id="linea"><h1 id="tit1">{{head.name}}</h1></div>
       <div *ngFor="let opzioni of head['items']">
-          <hr id="linbtn" /> <button ion-button outline (click)="stampa()" id="buttn" class="btn">{{opzioni.content}}</button>
+          <hr id="linbtn" /> 
+          <button ion-button outline (click)="stampa(opzioni)" id="buttn" class="btn">{{opzioni.content}}</button>
       </div>
     </ion-scroll>
   </ion-card>

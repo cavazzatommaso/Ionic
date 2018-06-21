@@ -23,10 +23,9 @@ export class AboutPage {
     
     }
 
-    stampa()
+    stampa(bottone)
     {
-      console.log("click");
-      var s= $("#buttn").text();
+      var s= bottone.content;
       $("#el1").append("<button ion-button outline>"+s+"</button>");
       console.log(s);
     }
