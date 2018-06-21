@@ -8,9 +8,9 @@ var ct= 0;
 var fileNames = [];
 
 cloudinary.config({ 
-    cloud_name: 'dz3pvtd53', 
-    api_key: '426177361659159', 
-    api_secret: 'k0rperTbYo1ol0kJc7XD57OGJFU' 
+    cloud_name: '', 
+    api_key: '', 
+    api_secret: '' 
   });
   
      
