@@ -13,7 +13,7 @@ cloudinary.config({
     api_secret: 'k0rperTbYo1ol0kJc7XD57OGJFU' 
   });
   
-     
+  
 function createZip(){
     archive  = archiver('zip');
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
         for(var ct=0;ct<files.length;ct++){
             fileNames.push(files[ct]);
             cloudinary.uploader.upload(indirizzo+'/'+fileNames[ct], function(result) { 
-                $("#result").append("</br><a href='"+result.url+"'>"+result.public_id+"</a>");
+                $("#result").append("</br><img src='"+result.url+"'></img>");
                 console.log(result) 
               });
         }
@@ -88,6 +88,8 @@ $(document).ready(function(){
         
     });
 });
+
+
 
 
 
