@@ -9,9 +9,10 @@ var fileNames = [];
 var estensione;
 
 cloudinary.config({ 
-    cloud_name: 'dz3pvtd53', 
-    api_key: '426177361659159', 
-    api_secret: 'k0rperTbYo1ol0kJc7XD57OGJFU' 
+    //insert your api key
+    cloud_name: '', 
+    api_key: '', 
+    api_secret: '' 
   });
   
   
