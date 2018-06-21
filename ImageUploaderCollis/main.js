@@ -6,6 +6,7 @@ var cloudinary = require('cloudinary');
 
 var ct= 0;
 var fileNames = [];
+var estensione;
 
 cloudinary.config({ 
     cloud_name: 'dz3pvtd53', 
@@ -29,11 +30,12 @@ function createZip(){
         return fs.readFileSync(fileName);
     }
 
-    
     for(i=0; i<fileNames.length; i++){
         var path = __dirname + '/'+fileNames[i];
         archive.append(getStream(path), { name: fileNames[i]});
     }
+
+    $("#result").html("</br><h1>Completato</h1>");
     
     archive.finalize(function(err, bytes) {
       if (err) {
@@ -57,7 +59,14 @@ $(document).ready(function(){
                 throw errore;
             }
         for(var ct=0;ct<files.length;ct++){
-            fileNames.push(files[ct]);
+            estensione = files[ct].split(".");
+            if(estensione[1]=="jpg"||estensione[1]=="jpeg"){
+                fileNames.push(files[ct]);
+            }else{
+                console.log("Non aggiunto errore estensione");
+                
+            }
+
         }
         console.dir(fileNames);
         
@@ -76,12 +85,20 @@ $(document).ready(function(){
             if(errore){
                 throw errore;
             }
+        $("#result").html("");
         for(var ct=0;ct<files.length;ct++){
             fileNames.push(files[ct]);
-            cloudinary.uploader.upload(indirizzo+'/'+fileNames[ct], function(result) { 
-                $("#result").append("</br><img src='"+result.url+"'></img>");
-                console.log(result) 
-              });
+            estensione = files[ct].split(".");
+            if(estensione[1]=="jpg"||estensione[1]=="jpeg"){
+                cloudinary.uploader.upload(indirizzo+'/'+fileNames[ct], function(result) { 
+                    $("#result").append("</br><img src='"+result.url+"'></img>");
+                    console.log(result) 
+                  });
+            } else{
+                console.log("Estensione sbagliata");
+                
+            }
+            
         }
         console.dir(fileNames);
         })
